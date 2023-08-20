@@ -9,6 +9,8 @@ public class DecrementClass implements Runnable{
 	public DecrementClass(Semaphore semaphore){
 		this.semaphore=semaphore;
 		t=new Thread(this);
+		t.setName("Decrement Thread");
+		t.setPriority(4);
 		t.start();
 	}
 
@@ -17,11 +19,9 @@ public class DecrementClass implements Runnable{
 	public void run() {
 		
 		try {
-			System.out.println("B thread requesting for permit");
-			System.out.println("Before State="+t.getState());
+			System.out.println(Thread.currentThread().getName()+"requesting for permit");
 			semaphore.acquire();
-			System.out.println("After State"+t.getState());
-			System.out.println("B thread granted Access");
+			System.out.println(Thread.currentThread().getName()+"granted Access");
 			for(int i=0;i<10;i++){
 			SharedResourceAccess.count--;
 			System.out.println("decremented the shared resource"+SharedResourceAccess.count);

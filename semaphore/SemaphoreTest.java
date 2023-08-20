@@ -9,7 +9,7 @@ public class SemaphoreTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Semaphore semaphore=new Semaphore(10);
+		Semaphore semaphore=new Semaphore(0);
 		System.out.println("Starting Semaphore Example");
 		new IncrementClass(semaphore);
 		new DecrementClass(semaphore);
