@@ -27,8 +27,6 @@ public class DecrementClass implements Runnable{
 			System.out.println("decremented the shared resource"+SharedResourceAccess.count);
 			Thread.sleep(1000);
 			}
-			
-			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
